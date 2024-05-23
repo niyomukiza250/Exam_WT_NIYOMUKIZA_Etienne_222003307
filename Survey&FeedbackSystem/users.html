@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 40px;
+        }
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+        .header .profile img {
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .sidebar a img {
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            margin-left: 220px; /* Added margin to make space for the sidebar */
+        }
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .menu-item h3 {
+            margin: 10px 0 0;
+            font-size: 18px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 20px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #93ede0;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8fafa;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="images/logo.png" alt="Logo">
+            <h1>Survey & Feedback System</h1>
+            <div class="profile">
+                <img src="images/profile.png" alt="Profile Picture">
+                <div class="dropdown">
+                    <button class="dropbtn">Account</button>
+                    <div class="dropdown-content">
+                        <a href="registration.php">Register</a>
+                        <a href="loginPage.php">Sign In</a>
+                        <a href="Index.html">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar">
+        <a href="home.html">
+            <img src="images/home.png" alt="Home"> <!-- Home icon -->
+            Home
+        </a>
+        <a href="users.html">
+            <img src="images/users.jpg" alt="Users">
+            Users
+        </a>
+        <a href="survey.html">
+            <img src="images/survey.png" alt="Survey">
+            Survey
+        </a>
+        <a href="feedback.html">
+            <img src="images/feedback.png" alt="Feedback">
+            Feedback
+        </a>
+        <a href="reports.html">
+            <img src="images/reports.png" alt="Survey Reports">
+            Reports
+        </a>
+    </div>
+    <div class="container">
+        <div class="menu-item">
+            <img src="images/users.jpg" alt="Users">
+            <h3>Users</h3>
+            <button class="button" onclick="window.location.href = 'addUser.php';">
+                <img src="images/Add.jpg" alt="Add">
+                Add
+            </button>
+            <button class="button" onclick="window.location.href = 'viewUser.php';">
+                <img src="images/View.png" alt="View">
+                View
+            </button>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Quick Actions</h3>
+        <button class="button" onclick="window.location.href = 'addSurvey.php';">Create New Survey</button>
+        <button class="button" onclick="window.location.href = 'viewResponse.php';">View Feedback</button>
+        <button class="button" onclick="window.location.href = 'viewReport.php';">Generate Report</button>
+    </div>
+    <div class="footer">
+        &copy; 2024 Survey And Feedback System
+    </div>
+</body>
+</html>
